@@ -10,39 +10,49 @@ const useStyles = makeStyles({
   },
   inputStyle: {
     width: "400px",
-    height: "50vh",
+    height: "70vh",
     marginTop: 20,
   }
 })
 
 const outputStyle = {
   width: "400px",
-  height: "50vh",
+  height: "70vh",
   backgroundColor: "#DCDCDC",
   marginTop: 20,
 }
 
-const initialState = `Heading
-=======
-Sub-heading
+const initialState = `Welcome to my React Markdown Previewer!
+============
+This is a sub-heading...
 -----------
-### Another deeper heading
-Paragraphs are separated
-by a blank line.
-Leave 2 spaces at the end of a line to do a
-line break
-Text attributes *italic*, **bold**,
-\`monospace\`, ~~strikethrough~~ .
+### And here's some other cool stuff:
+// this is a multi-line code:
+\`\`\`
+function addNumbers(a, b) {
+  return a + b
+}
+\`\`\`
+> A Block Quote!
+### Text attributes 
+*italic*
+ **bold**,
+\`monospace\`
+~~strikethrough~~ 
+-----------------
+[FreeCodeCamp Link](https://www.freecodecamp.com)
+================
 Shopping list:
   * apples
   * oranges
   * pears
-Numbered list:
-  1. apples
-  2. oranges
-  3. pears
-The rain---not the reign---in
-Spain.`
+
+### And last but not least, let's not forget embedded images:
+![React Logo w/ Text](https://goo.gl/Umyytc)`
+
+marked.setOptions({
+  breaks: true
+})
 
 function App() {
   const [markdown, setMarkdown] = useState(initialState)
